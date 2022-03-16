@@ -24,11 +24,12 @@ public class Dialogue {
     }
 
     public static int provideKey() {
-        System.out.println("Введите ключ сдвига:");
+        int maxValueOfKey = ApplicationConstants.ALPHABET.length - 1;
+        System.out.println("Введите ключ сдвига от 0 до " + maxValueOfKey + ":");
         Scanner scanner = new Scanner(System.in);
         int key = scanner.nextInt();
-        while(!(key >= 0 && key <= ApplicationConstants.ALPHABET.length - 1)) {
-            System.out.println("Неверный ключ. Введите ключ сдвига:");
+        while(!(key >= 0 && key <= maxValueOfKey)) {
+            System.out.println("Неверный ключ. Введите ключ сдвига от 0 до " + maxValueOfKey + ":");
             key = scanner.nextInt();
         }
         System.out.println("Ключ принят");

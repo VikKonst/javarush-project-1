@@ -1,9 +1,6 @@
 package com.javarush.cryptoanalyser.cryptoanalysis;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +20,15 @@ public class IOUtils {
                 srcCharArray[i] = chars.get(i);
             }
             return srcCharArray;
+        }
+
+        public static void writeCharsToFile(File file, char[] cypheredCharArray) {
+            try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
+                bufferedWriter.write(cypheredCharArray);
+                bufferedWriter.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
 

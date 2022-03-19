@@ -6,19 +6,36 @@ import java.io.File;
 import java.util.Scanner;
 
 public class Dialogue {
-    public static void start() {
-        System.out.println("Добро пожаловать в мою первую программу!");
+    public static String start() {
+        System.out.println("Добро пожаловать в мою первую программу!\nВыберите и введите необходимое действие из списка или введите " +
+                        "\"Завершить\", чтобы выйти из программы:\n" +
+                            "Шифрование\nРасшифровка\nВзлом");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
     }
 
-    public static File askForPath() {
-        System.out.println("Введите путь к файлу:");
+    public static File askForInputPath() {
+        System.out.println("Введите путь к исходному файлу:");
         Scanner scanner = new Scanner(System.in);
         File file = new File(scanner.nextLine());
         if(file.exists()){
             System.out.println("Валидация файла прошла успешно");
         } else {
             System.out.println("Файл не найден");
-            file = Dialogue.askForPath();
+            file = Dialogue.askForInputPath();
+        }
+        return file;
+    }
+
+    public static File askForOutputPath() {
+        System.out.println("Введите путь к файлу для записи результата работы программы:");
+        Scanner scanner = new Scanner(System.in);
+        File file = new File(scanner.nextLine());
+        if(file.exists()){
+            System.out.println("Валидация файла прошла успешно");
+        } else {
+            System.out.println("Файл не найден");
+            file = Dialogue.askForInputPath();
         }
         return file;
     }

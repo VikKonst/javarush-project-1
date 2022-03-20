@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         String chosenAction = Dialogue.start();
 
-        if (chosenAction.equalsIgnoreCase("Шифрование")) {
+        if (chosenAction.equalsIgnoreCase("encrypt")) {
             File inputFile = Dialogue.askForInputPath();
             File outputFile = Dialogue.askForOutputPath();
             int key = Dialogue.provideKey();
@@ -23,7 +23,7 @@ public class Main {
             IOUtils.writeCharsToFile(outputFile, cypheredCharArray);
             Dialogue.end();
         }
-        if (chosenAction.equalsIgnoreCase("Расшифровка")) {
+        if (chosenAction.equalsIgnoreCase("decrypt")) {
             File inputFile = Dialogue.askForInputPath();
             File outputFile = Dialogue.askForOutputPath();
             int key = Dialogue.provideKey();
@@ -32,7 +32,7 @@ public class Main {
             IOUtils.writeCharsToFile(outputFile, decipheredCharArray);
             Dialogue.end();
         }
-        if (chosenAction.equalsIgnoreCase("Взлом")) {
+        if (chosenAction.equalsIgnoreCase("hack")) {
             File inputFile = Dialogue.askForInputPath();
             File outputFile = Dialogue.askForOutputPath();
             char[] cypheredCharArray = IOUtils.readCharsFromFile(inputFile);
@@ -45,11 +45,11 @@ public class Main {
                 }
                 Dialogue.end();
             } catch (IOException e) {
-                System.out.println("Системная ошибка. Работа программы не может быть продолжена.");
+                System.out.println("System error. The program can not be continued.");
             }
         }
-        if (chosenAction.equalsIgnoreCase("Завершить")) {
-            System.out.println("До новых встреч!");
+        if (chosenAction.equalsIgnoreCase("exit")) {
+            System.out.println("See you soon!");
             System.exit(0);
         }
     }

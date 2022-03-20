@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class BruteForce {
-    public static File file = new File("src\\java\\com\\javarush\\cryptoanalyser\\cryptoanalysis\\FrequentWordsForBruteForceRealization");
+    public static File file = new File("com\\javarush\\cryptoanalyser\\cryptoanalysis\\FrequentWordsForBruteForceRealization.txt");
 
     public static char[] hack(char[] inputCharArray) throws IOException {
         int amountOfFrequentWords;

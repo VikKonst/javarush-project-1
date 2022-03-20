@@ -10,6 +10,7 @@ public class Decryption {
             try {
                 tempCharArray.add(getDecryptedChar(encryptedChar, key));
             } catch (ApplicationException e) {
+                System.out.println("Обнаружен неизвестный символ! Расшифровка невозможна!");
                 System.exit(1);
             }
         }
@@ -30,6 +31,6 @@ public class Decryption {
                 return ApplicationConstants.ALPHABET[indexOfShift];
             }
         }
-        throw new ApplicationException("Указанный символ не найден! Расшифровка невозможна!");
+        throw new ApplicationException("Указанный символ не найден!");
     }
 }

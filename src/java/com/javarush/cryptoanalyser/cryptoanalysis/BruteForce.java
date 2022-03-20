@@ -10,7 +10,7 @@ public class BruteForce {
     public static File file = new File("src\\java\\com\\javarush\\cryptoanalyser\\cryptoanalysis\\FrequentWordsForBruteForceRealization");
 
     public static char[] hack(char[] inputCharArray) throws IOException {
-        int amountOfFrequentWords = 0;
+        int amountOfFrequentWords;
         Map<Integer, Integer> statistics = new HashMap<>();
         for (int key = 1; key < ApplicationConstants.ALPHABET.length; key++) {
             char[] interimCharArray = Decryption.decrypt(inputCharArray, key);
@@ -35,20 +35,21 @@ public class BruteForce {
     public static void hackAllKeys(char[] inputCharArray, File file) {
         for (int key = 1; key < ApplicationConstants.ALPHABET.length; key++) {
             char[] interimCharArray = Decryption.decrypt(inputCharArray, key);
+            String pathToFile = file.getParent();
             String fileName = "output with key " + key + ".txt";
-            file = new File(file, fileName);
+            file = new File(pathToFile, fileName);
             IOUtils.writeCharsToFile(file, interimCharArray);
         }
     }
 
     public static List<String> getListOfFrequentWords(File file) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader (file));
-        List<String> frequentWords = new ArrayList<String>();
-        while(reader.ready()) {
-            frequentWords.add(reader.readLine());
-        }
-        reader.close();
-        return frequentWords;
+            List<String> frequentWords = new ArrayList<>();
+            while(reader.ready()) {
+                frequentWords.add(reader.readLine());
+            }
+            reader.close();
+            return frequentWords;
     }
 
     public static int checkForFrequentWords(String decipheredText) throws IOException {

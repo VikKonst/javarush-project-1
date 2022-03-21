@@ -15,14 +15,14 @@ Program launch:
 
 `java -jar ./dist/Cryptoanalyser.jar`
 
-##2. Restrictions
+## 2. Restrictions
 
 The program works only with files in ***.txt*** format.  
 It is recommended to use ***Windows-1251*** encoding to achieve  
 the correct performance of the program in case of launching  
 the program on Windows.
 
-##3. Description of the Caesar cipher algorithm
+## 3. Description of the Caesar cipher algorithm
 
 Caesar cipher is based on the method of substitution:  
 each character in the initial text is replaced by a character  
@@ -32,7 +32,7 @@ The shift of the character is determined by a key which
 is defined by user.<br>
 ![w](http://assets.stickpng.com/images/584bee68a62aaa830c43edac.png)
 
-##4. Description of classes
+## 4. Description of classes
 
 1. The root package `com/javarush/cryptoanalyser` contains  
 class `Main` which is the entry point of the program.
@@ -59,7 +59,7 @@ will be written to file and provided to user as an output. If no
 matches will be found the method `hackAllKeys` will return as many  
 files in the output as there are the keys. 
 
-##5. Links
+## 5. Links
 
 1. [Link](https://github.com/VikKonst/javarush-project-1) to GitHub source code.
 
